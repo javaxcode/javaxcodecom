@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Index extends CI_Controller
+class Price extends CI_Controller
 {
     
     public function __construct()
@@ -17,17 +17,20 @@ class Index extends CI_Controller
         $data['title'] = 'javaXcode';
         
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/topbar');
-        $this->load->view('index');
+        $this->load->view('templates/topbarblack');
+        $this->load->view('price');
         $this->load->view('templates/footer');   
     }
-    
 
-    // public function logout()
-    // {
-    //     $this->session->unset_userdata('user_email');
-    //     $this->session->unset_userdata('user_role');
-    //     // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Log Out</div>');
-    //     redirect('index');
-    // }
+    public function hosting()
+    { 
+        $data['title'] = 'javaXcode';
+        
+        //$this->load->view('templates/header', $data);
+        //$this->load->view('templates/topbarblack');
+        $this->load->view('hosting');
+        //$this->load->view('templates/footer');   
+    }
+
+    
 }

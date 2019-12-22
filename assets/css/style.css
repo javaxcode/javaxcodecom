@@ -2969,12 +2969,12 @@ ul.filter-categories > li {
     font-size: 1.6667em;
     text-transform: uppercase;
     font-weight: 600;
-    background-image: url("../images/logo/skin1/logo.png");
+    background-image: url("../images/logo/skin1/jxc_logo1.png");
     background-repeat: no-repeat;
     margin-bottom: 0; }
     @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
       #header .logo {
-        background-image: url("../images/logo/skin1/logo@2x.png");
+        background-image: url("../images/logo/skin1/jxc_logo1.png");
         background-size: 25px 26px; } }
     #header .logo a {
       color: #000; }
@@ -3152,7 +3152,7 @@ ul.filter-categories > li {
     text-transform: none; }
   .page-title-container.style5 .banner {
     height: 682px;
-    background-image: url("http://placehold.it/1920x1280"); }
+    background-image: url("../images/tentangjavaxcode.jpg"); }
   .page-title-container.style5 .caption {
     text-transform: none; }
     .page-title-container.style5 .caption .caption-lg {
@@ -5158,7 +5158,7 @@ ul.filter-categories > li {
     top: 0;
     width: 52px;
     height: 52px;
-    background: url(../images/logo-white.png) no-repeat center center #ff6600;
+    background: url(../images/jxc_logokotak.png) no-repeat center center #ff6600;
     cursor: pointer; }
   .style-changer .btn {
     font-size: 0.8333em;
@@ -5792,7 +5792,7 @@ ul.filter-categories > li {
       -ms-transition: top 0.5s ease 0s;
       transition: top 0.5s ease 0s; }
     #footer .back-to-top:before {
-      background-image: url(../images/logo-white.png);
+      background-image: url(../images/jxc_logokotak.png);
       -moz-transition: all 0.25s ease 0s;
       -o-transition: all 0.25s ease 0s;
       -webkit-transition: all 0.25s ease 0s;
@@ -7552,10 +7552,10 @@ ul.filter-options li {
   margin-right: 100px; }
 
 .parallax-image1 {
-  background-image: url("http://placehold.it/1920x1280"); }
+  background-image: url("../images/bg_homepage.jpg"); }
 
 .parallax-image2 {
-  background-image: url("http://placehold.it/1920x1280");
+  background-image: url("../images/bg_homepage.jpg");
   height: 488px; }
 
 .banner-image1 {
