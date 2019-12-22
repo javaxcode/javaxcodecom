@@ -52,8 +52,8 @@
                                     <i class="fa fa-lightbulb-o"></i>
                                 </div>
                                 <div class="box-content">
-                                    <h4 class="box-title"><a href="#">Demo Content</a></h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptate accusan doloremque laudantium.</p>
+                                    <h4 class="box-title"><a href="#">Kaya Fitur</a></h4>
+                                    <p>Fitur website atau sistem tak terbatas. Anda tinggal mengutarakan kepada kami fitur apa yang anda ingin bangun di website atau sistem untuk perusahaan anda.</p>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +63,8 @@
                                     <i class="fa fa-github"></i>
                                 </div>
                                 <div class="box-content">
-                                    <h4 class="box-title"><a href="#">Responsive Sliders</a></h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptate accusan doloremque laudantium.</p>
+                                    <h4 class="box-title"><a href="#">Responsive Design</a></h4>
+                                    <p>Responsive Design membuat website atau sistem mampu menyesuaikan tampilan layar sesuai perangkat yang digunakan.</p>
                                 </div>
                             </div>
                         </div>
@@ -74,8 +74,8 @@
                                     <i class="fa fa-chain"></i>
                                 </div>
                                 <div class="box-content">
-                                    <h4 class="box-title"><a href="#">Ajax Contact Forms</a></h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptate accusan doloremque laudantium.</p>
+                                    <h4 class="box-title"><a href="#">SSL Certificate</a></h4>
+                                    <p>Setiap website dilengkapi SSL Certificate sehingga keamanan website lebih terjamin dan dipercaya mesin pencari google.</p>
                                 </div>
                             </div>
                         </div>
