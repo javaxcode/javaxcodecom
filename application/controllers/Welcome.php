@@ -22,4 +22,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function email(){
+		$this->load->library('emailku');
+		$r = $this->emailku->kirim();
+		print_r($r);
+	}
 }
