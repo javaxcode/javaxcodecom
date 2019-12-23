@@ -21,111 +21,25 @@
                     </div>
                     <div class="pricing-table-container">
                         <div class="row">
+                            {data}
                             <div class="col-sms-6 col-sm-6 col-md-3 animated" data-animation-type="bounceInLeft">
                                 <div class="pricing-table style1">
                                     <div class="pricing-table-header">
                                         <div class="pricing-row">
-                                            <span class="currency-symbol">Rp. 10.900</span>
+                                            <span class="currency-symbol">Rp. {harga}</span>
                                             <small>Per Bulan</small>
                                         </div>
-                                        <h4 class="pricing-type">Hemat</h4>
+                                        <h4 class="pricing-type">{nama}</h4>
                                     </div>
                                     <div class="pricing-table-content">
-                                        <ul>
-                                            <li>500 MB Disk Space</li>
-                                            <li>Unlimited Bandwidth</li>
-                                            <li>Unlimited Database</li>
-                                            <li>1 Addon Domain</li>
-                                            <li>Instan Backup</li>
-                                            <li>Unlimited SSL Gratis Selamanya</li>
-                                        </ul>
+                                        {deskripsi}
                                     </div>
                                     <div class="pricing-table-footer">
-                                        <a href="#" class="btn style4">Pesan Sekarang</a>
+                                        <a href="<?=base_url('/checkout/go/{id}');?>" class="btn style4">Pesan Sekarang</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sms-6 col-sm-6 col-md-3 animated" data-animation-type="bounceInLeft">
-                                <div class="pricing-table style1">
-                                    <div class="pricing-table-header">
-                                        <div class="pricing-row">
-                                        <span class="currency-symbol">Rp. 41.900</span>
-                                            <small>Per Month</small>
-                                        </div>
-                                        <h4 class="pricing-type">Basic</h4>
-                                    </div>
-                                    <div class="pricing-table-content">
-                                        <ul>
-                                            <li>Unlimited Disk Space</li>
-                                            <li>Unlimited Bandwidth</li>
-                                            <li>Unlimited POP3 Email</li>
-                                            <li>Unlimited Database</li>
-                                            <li>10 Addon Domain</li>
-                                            <li>Instan Backup</li>
-                                            <li>Domain Gratis</li>
-                                            <li>Unlimited SSL Gratis Selamanya</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-table-footer">
-                                        <a href="#" class="btn style4">Pesan Sekarang</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sms-6 col-sm-6 col-md-3 animated" data-animation-type="bounceInRight">
-                                <div class="pricing-table active style1">
-                                    <div class="pricing-table-header">
-                                        <div class="pricing-row">
-                                        <span class="currency-symbol">Rp. 37.900</span>
-                                            <small>Per Month</small>
-                                        </div>
-                                        <h4 class="pricing-type">Premium</h4>
-                                    </div>
-                                    <div class="pricing-table-content">
-                                        <ul>
-                                            <li>Unlimited Disk Space</li>
-                                            <li>Unlimited Bandwidth</li>
-                                            <li>Unlimited POP3 Email</li>
-                                            <li>Unlimited Database</li>
-                                            <li>Unlimited Addon Domain</li>
-                                            <li>Instan Backup</li>
-                                            <li>Domain Gratis</li>
-                                            <li>Unlimited SSL Gratis Selamanya</li>
-                                            <li>SpamAsassin Mail Protection</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-table-footer">
-                                        <a href="#" class="btn style4">Pesan Sekarang</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sms-6 col-sm-6 col-md-3 animated" data-animation-type="bounceInRight">
-                                <div class="pricing-table style1">
-                                    <div class="pricing-table-header">
-                                        <div class="pricing-row">
-                                        <span class="currency-symbol">Rp. 93.900</span>
-                                            <small>Per Month</small>
-                                        </div>
-                                        <h4 class="pricing-type">Ultimate</h4>
-                                    </div>
-                                    <div class="pricing-table-content">
-                                        <ul>
-                                            <li>Unlimited Disk Space</li>
-                                            <li>Unlimited Bandwidth</li>
-                                            <li>Unlimited POP3 Email</li>
-                                            <li>Unlimited Database</li>
-                                            <li>Unlimited Addon Domain</li>
-                                            <li>Magic Auto Backup & Restore</li>
-                                            <li>Domain Gratis</li>
-                                            <li>Unlimited SSL Gratis Selamanya</li>
-                                            <li>Prioritas Layanan Support</li>
-                                            <li>SpamAsassin Mail Protection</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-table-footer">
-                                        <a href="#" class="btn style4">Pesan Sekarang</a>
-                                    </div>
-                                </div>
-                            </div>
+                            {/data}
                         </div>
                     </div>
                    

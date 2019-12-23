@@ -46,6 +46,8 @@
     
     <!-- Responsive Styles -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/responsive.css">
+
+    <script type="text/javascript" src="<?=base_url();?>assets/js/jquery-2.1.3.min.js"></script>
     
     <!-- CSS for IE -->
     <!--[if lte IE 9]>
