@@ -60,9 +60,8 @@ $route['contact'] = 'com/contact';
 $route['about'] = 'com/about';
 $route['login'] = 'com/login';
 $route['registrasi'] = 'com/registrasi';
+$route['member'] = 'com/member';
 
 //Route checkout
 $route['checkout'] = 'com/checkout';
 $route['checkout/go/(:any)'] = 'com/checkout/go/$1';
-
-$route['member'] = 'com/member';
