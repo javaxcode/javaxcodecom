@@ -8,26 +8,26 @@ class Auth extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->helper('url');
-        $this->load->library('Mobile_Detect');
+        //$this->load->library('Mobile_Detect');
     }
 
     public function index()
     {
-        $detect = new Mobile_Detect;
-        if ($detect->isMobile()) {
-            redirect('https://javaxcode.net');
+        // $detect = new Mobile_Detect;
+        // if ($detect->isMobile()) {
+        //     redirect('https://javaxcode.net');
+        // } else {
+        $data['title'] = 'javaXcode';
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('net/templates/auth_header', $data);
+            $this->load->view('net/auth/login');
+            $this->load->view('net/templates/auth_footer');
         } else {
-            $data['title'] = 'javaXcode';
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required');
-            if ($this->form_validation->run() == false) {
-                $this->load->view('templatesnet/auth_header', $data);
-                $this->load->view('auth/login');
-                $this->load->view('templatesnet/auth_footer');
-            } else {
-                $this->_login();
-            }
+            $this->_login();
         }
+        //}
     }
 
     private function _login()
@@ -47,21 +47,21 @@ class Auth extends CI_Controller
                     ];
                     $this->session->set_userdata($data);
                     if ($user['user_role'] == 1) {
-                        redirect('menu');
+                        redirect('net/menu');
                     } else {
-                        redirect('menu');
+                        redirect('net/menu');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Salah</div>');
-                    redirect('auth');
+                    redirect('net/auth');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email Belum di Aktivasi</div>');
-                redirect('auth');
+                redirect('net/auth');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email Sudah Terdaftar!</div>');
-            redirect('auth');
+            redirect('net/auth');
         }
     }
 
@@ -80,9 +80,9 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == false) {
-            $this->load->view('templatesnet/auth_header', $data);
-            $this->load->view('auth/registration');
-            $this->load->view('templatesnet/auth_footer');
+            $this->load->view('net/templates/auth_header', $data);
+            $this->load->view('net/auth/registration');
+            $this->load->view('net/templates/auth_footer');
         } else {
             $data = [
                 'user_name' => htmlspecialchars($this->input->post('name', true)),

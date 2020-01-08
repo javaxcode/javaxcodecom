@@ -1,7 +1,6 @@
-
 <body>
     <div id="page-wrapper">
-        <header id="header" >
+        <header id="header" class="header-color-white">
             <div class="container">
                 <div class="header-inner">
                     <div class="branding">
@@ -11,14 +10,15 @@
                     </div>
                     <nav id="nav">
                         <ul class="header-top-nav">
-                            
+
                             <li class="mini-search">
-                                <a href="#"><i class="fa fa-search has-circle"></i></a>
+                                <a href="#"><i class="fa fa-sign-in has-circle"></i></a>
                                 <div class="main-nav-search-form">
                                     <form method="get" role="search">
-                                        <div class="search-box">
-                                            <input type="text" id="s" name="s" value="">
-                                            <button type="submit"><i class="fa fa-search"></i></button>
+                                        <div class="box">
+                                            <!-- <input type="text" id="s" name="s" value="">
+                                            <button type="submit"><i class="fa fa-search"></i></button> -->
+                                            <div class="box"><a href="login" class="btn btn-sm style1">Login / Registrasi</a></div>
                                         </div>
                                     </form>
                                 </div>
@@ -28,7 +28,7 @@
                             </li>
                         </ul>
                         <ul id="main-nav" class="hidden-mobile">
-                            <li><a href="index">Home</a></li>
+                            <li><a href="<?= base_url() ?>">Home</a></li>
                             <li><a href="service">Service</a></li>
                             <li><a href="portfolio">Portfolio</a></li>
                             <!-- <li class="menu-item-has-children">

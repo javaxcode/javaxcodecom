@@ -53,4 +53,10 @@ $route['default_controller'] = 'index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
-$route['net'] = 'net/index/index';
+$route['service'] = 'com/service';
+$route['portfolio'] = 'com/portfolio';
+$route['price'] = 'com/price';
+$route['contact'] = 'com/contact';
+$route['about'] = 'com/about';
+$route['login'] = 'com/login';
+$route['registrasi'] = 'com/registrasi';

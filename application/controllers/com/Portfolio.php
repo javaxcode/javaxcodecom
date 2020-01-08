@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Service extends CI_Controller
+class Portfolio extends CI_Controller
 {
-    
+
     public function __construct()
     {
         parent::__construct();
@@ -13,15 +13,12 @@ class Service extends CI_Controller
     }
 
     public function index()
-    { 
+    {
         $data['title'] = 'javaXcode';
-        
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/topbarblack');
-        $this->load->view('service');
-        $this->load->view('templates/footer');   
+
+        $this->load->view('com/templates/header', $data);
+        $this->load->view('com/templates/topbarblack');
+        $this->load->view('com/portfolio');
+        $this->load->view('com/templates/footer');
     }
-
-
-    
 }
