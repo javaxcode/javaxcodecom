@@ -64,3 +64,5 @@ $route['registrasi'] = 'com/registrasi';
 //Route checkout
 $route['checkout'] = 'com/checkout';
 $route['checkout/go/(:any)'] = 'com/checkout/go/$1';
+
+$route['member'] = 'com/member';
