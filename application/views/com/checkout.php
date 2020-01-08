@@ -5,9 +5,8 @@
                 </div>
             </div>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">PAGES</a></li>
-                <li class="active">Shop</li>
+                <li><a href="<?=base_url();?>">Home</a></li>
+                <li class="active">Checkout</li>
             </ul>
         </div>
 
@@ -129,7 +128,7 @@ function update_cart(a){
     var data = a.split('_');
     $.ajax({
         type: "post",
-        url: "<?=base_url('checkout/update_cart');?>",
+        url: "<?=base_url('com/checkout/update_cart');?>",
         data: {
             rowid: data[1],
             qty: data[0]
@@ -143,8 +142,9 @@ function update_cart(a){
 
 function confirmDelete(id){
     if (confirm('Apakah anda yakin?')) {
-        $.get("<?=base_url('checkout/hapus/');?>"+id, function (response) {
-                get_data_cart();
+        var rowid = $('#dl'+id).attr('data-rowid');
+        $.get("<?=base_url('com/checkout/hapus/');?>"+rowid, function (response) {
+                location.reload();
             },
             "JSON"
         );
@@ -152,13 +152,13 @@ function confirmDelete(id){
 }
 
 function get_data_cart(){
-    $.getJSON('<?=base_url('checkout/get-data-cart');?>', function (response) {
+    $.getJSON('<?=base_url('com/checkout/get-data-cart');?>', function (response) {
         var data = response.cart;
         $('#totalorder').html('Rp. '+response.total);
 
         var data_loop = '';
         $.each(data, function (i,v) { 
-             data_loop += '<tr class="cart_item"><td class="product_name">'+v.name+'</td><td class="product-quantity"><select onChange="update_cart(this.value);"><option value="'+v.qty+'_'+v.rowid+'">'+v.qty+' Bulan</option><option value="1_'+v.rowid+'">1 Bulan</option><option value="6_'+v.rowid+'">6 Bulan</option><option value="12_'+v.rowid+' ">12 Bulan</option><option value="24_'+v.rowid+'">24 Bulan</option><option value="36_'+v.rowid+'">36 Bulan</option></select></td><td class="product-total"><span class="amount">Rp. '+v.price+'</span></td><td class="product-total"><span class="amount">Rp. '+v.subtotal+'</span></td><td class="product_name"><a href="#." onClick="confirmDelete('+v.id+');"><li class="fa fa-times"></li></a></td></tr>';
+             data_loop += '<tr class="cart_item"><td class="product_name">'+v.name+'</td><td class="product-quantity"><select onChange="update_cart(this.value);"><option value="'+v.qty+'_'+v.rowid+'">'+v.qty+' Bulan</option><option value="1_'+v.rowid+'">1 Bulan</option><option value="6_'+v.rowid+'">6 Bulan</option><option value="12_'+v.rowid+' ">12 Bulan</option><option value="24_'+v.rowid+'">24 Bulan</option><option value="36_'+v.rowid+'">36 Bulan</option></select></td><td class="product-total"><span class="amount">Rp. '+v.price+'</span></td><td class="product-total"><span class="amount">Rp. '+v.subtotal+'</span></td><td class="product_name"><a href="#." id="dl'+v.id+'" data-rowid="'+v.rowid+'" onClick="confirmDelete('+v.id+');"><li class="fa fa-times"></li></a></td></tr>';
         });
         $('#order_review table tbody').html(data_loop);
     });

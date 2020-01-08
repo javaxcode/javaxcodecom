@@ -60,3 +60,7 @@ $route['contact'] = 'com/contact';
 $route['about'] = 'com/about';
 $route['login'] = 'com/login';
 $route['registrasi'] = 'com/registrasi';
+
+//Route checkout
+$route['checkout'] = 'com/checkout';
+$route['checkout/go/(:any)'] = 'com/checkout/go/$1';

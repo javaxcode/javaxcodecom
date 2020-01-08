@@ -19,12 +19,12 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h4>Login To Your Account</h4>
-                        <form>
+                        <form action="" method="POST">
                             <div class="form-group">
-                                <input type="text" class="input-text full-width" placeholder="Email Address">
+                                <input type="text" name="email" class="input-text full-width" placeholder="Email Address">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="input-text full-width" placeholder="Password">
+                                <input type="text" name="password" class="input-text full-width" placeholder="Password">
                             </div>
                             <!-- <div class="form-group">
                                 <div class="checkbox">

@@ -16,10 +16,10 @@ class Checkout extends CI_Controller
       'title' => 'Checkout'
     );
 
-    $this->load->view('templates/header', $header);
-    $this->load->view('templates/topbarblack');
-    $this->load->view('checkout');
-    $this->load->view('templates/footer');   
+    $this->load->view('com/templates/header', $header);
+    $this->load->view('com/templates/topbarblack');
+    $this->load->view('com/checkout');
+    $this->load->view('com/templates/footer');   
   }
 
   public function go($param=''){
@@ -78,11 +78,7 @@ class Checkout extends CI_Controller
 
   public function hapus($id=''){
     if($id != null){
-      foreach($this->cart->contents() as $row){
-        if($row->id == $id){
-          $this->cart->remove($row->rowid);
-        }
-      }
+      $this->cart->remove($id);
       header('Content-Type: Application/json');
       echo json_encode(array('status' => 200));
     }else{
