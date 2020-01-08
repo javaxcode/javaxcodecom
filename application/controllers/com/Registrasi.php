@@ -15,15 +15,16 @@ class Registrasi extends CI_Controller
     public function index()
     {
         $data['title'] = 'javaXcode';
-            $this->load->view('com/templates/header', $data);
-            $this->load->view('com/templates/topbarblack');
-            $this->load->view('com/registrasi');
-            $this->load->view('com/templates/footer');
+        $this->load->view('com/templates/header', $data);
+        $this->load->view('com/templates/topbarblack');
+        $this->load->view('com/registrasi');
+        $this->load->view('com/templates/footer');
     }
 
-    
 
-    public function proses(){
+
+    public function proses()
+    {
         $post = $this->input->post();
         $data = array(
             'email' => $post['email'],
@@ -39,14 +40,14 @@ class Registrasi extends CI_Controller
         );
 
         $cek = $this->db->get_where('member', array('email' => $post['email']))->num_rows();
-        if($cek == 0){
+        if ($cek == 0) {
             //Insert Database
             //$this->load->library('emailsender');
             $this->db->set($data);
             $this->db->insert('member');
-            
+
             //kirim email
-            $datav=[];
+            $datav = [];
             $dataEmail = array(
                 'to' => $data['email'],
                 'subject' => 'Link Aktivasi javaXcode',
@@ -55,23 +56,24 @@ class Registrasi extends CI_Controller
             $this->send($dataEmail);
             //session notif
             $this->session->set_flashdata(array('notif' => 'success', 'message' => 'Pendaftaran berhasil, silakan cek inbox/spam email anda.'));
-        }else{
+        } else {
             //session notif
             $this->session->set_flashdata(array('notif' => 'danger', 'message' => 'Email sudah terdaftar!'));
         }
         //redirect('registrasi');
     }
 
-    private function send($data = array()){
-        $config = Array(
-        'protocol' => 'smtp',
-        'smtp_host' => 'mail.javaxcode.com',
-        'smtp_port' => 587,
-        'smtp_user' => 'cs@javaxcode.com',
-        'smtp_pass' => '212jxc212',
-        'charset'  => 'utf-8', 
-        'wordwrap'   => TRUE,
-        'mailtype'  => 'html'
+    private function send($data = array())
+    {
+        $config = array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'srv90.niagahoster.com',
+            'smtp_port' => 587,
+            'smtp_user' => 'cs@javaxcode.com',
+            'smtp_pass' => '212jxc212',
+            'charset'  => 'utf-8',
+            'wordwrap'   => TRUE,
+            'mailtype'  => 'html'
         );
         $this->load->library('email', $config);
 
@@ -80,7 +82,7 @@ class Registrasi extends CI_Controller
         $this->email->subject($data['subject']);
         $this->email->message($data['html']);
 
-        $result = $this->email->send();  
+        $result = $this->email->send();
         return $result;
     }
 }
