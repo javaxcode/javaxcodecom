@@ -19,12 +19,12 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h4>Registrasi</h4>
-                        <form>
+                        <form action="<?=base_url('com/registrasi/proses');?>" method="POST">
                             <div class="form-group">
-                                <input type="text" class="input-text full-width" placeholder="Email Address">
+                                <input type="email" name="email" class="input-text full-width" placeholder="Email Address">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="input-text full-width" placeholder="Password">
+                                <input type="text" name="password" class="input-text full-width" placeholder="Password">
                             </div>
                             <!-- <div class="form-group">
                                 <div class="checkbox">
