@@ -60,3 +60,4 @@ $route['contact'] = 'com/contact';
 $route['about'] = 'com/about';
 $route['login'] = 'com/login';
 $route['registrasi'] = 'com/registrasi';
+$route['member'] = 'com/member';
