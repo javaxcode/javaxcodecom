@@ -11,14 +11,42 @@
                     <nav id="nav">
                         <ul class="header-top-nav">
 
+                        <?php if($this->cart->total() != 0): ?>
+                        <li class="mini-cart menu-item-has-children">
+                                <a href="#"><i class="fa fa-shopping-cart has-circle"></i></a>
+                                <div class="sub-nav cart-content">
+                                    <ul class="product-list product-list-widget">
+                                        <?php foreach($this->cart->contents() as $row){ ?>
+                                        <li>
+                                            <div class="product-content">
+                                                <a href="#" class="product-title"><?=$row['name'];?></a>
+                                                <span class="product-price">Rp <?=number_format($row['price']);?> x <?=$row['qty'];?></span>
+                                            </div>
+                                        </li>
+                                        <?php } ?>
+                                    </ul>
+                                    <hr>
+                                    <div class="st-table">
+                                        <div class="cart-action">
+                                            <a href="<?=base_url('checkout');?>" class="btn-view-cart btn btn-sm style4"><i class="fa fa-shopping-cart"></i>View Cart</a>
+                                        </div>
+                                        <div class="cart-price">Total: <span class="total-price">Rp <?=number_format($this->cart->total());?></span></div>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php endif; ?>
                             <li class="mini-search">
-                                <a href="#"><i class="fa fa-search has-circle"></i></a>
+                                <a href="#"><i class="fa fa-user has-circle"></i></a>
                                 <div class="main-nav-search-form">
                                     <form method="get" role="search">
-                                        <div class="search-box">
+                                        <div class="box">
                                             <!-- <input type="text" id="s" name="s" value="">
                                             <button type="submit"><i class="fa fa-search"></i></button> -->
-                                            <div class="box"><a href="#" class="btn btn-sm style1">Small Button</a></div>
+                                            <?php if($this->session->userdata('user_email') == null):?>
+                                                <div class="box"><a href="login" class="btn btn-sm style1">Login / Registrasi</a></div>
+                                            <?php else: ?>
+                                                <div class="box"><a href="logout" class="btn btn-sm style1">Logout</a></div>
+                                            <?php endif; ?>
                                         </div>
                                     </form>
                                 </div>

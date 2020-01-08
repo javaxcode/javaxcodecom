@@ -15,6 +15,7 @@
                 <div class="woocommerce">
                     <form class="checkout block">
                         <div class="row">
+                            <?php if($this->session->userdata('user_email') == null): ?>
                             <div class="col-sm-6">
                                 <div class="woocommerce-billing-fields box">
                                     <h4>Billing Address</h4>
@@ -50,6 +51,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php endif; ?>
+
                             <div class="col-sm-6">
                                 <h4>Your order</h4>
                                 <div id="order_review">
@@ -87,6 +90,7 @@
                                                 <div class="payment_box payment_method_bacs"><p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
                                                 </div>
                                             </li>
+<!--                                             
                                             <li class="payment_method_cheque">
                                                 <label class="radio">
                                                     <input id="payment_method_cheque" class="input-radio" name="payment_method" value="cheque" data-order_button_text="" type="radio">
@@ -102,7 +106,7 @@
                                                 </label>
                                                 <div class="payment_box payment_method_paypal"><p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account</p>
                                                 </div>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                         <div class="form-row place-order">
                                             <noscript>Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.<br/>
@@ -114,6 +118,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </form>
                 </div>

@@ -24,7 +24,7 @@
                             <li><a href="#my-product-reviews" data-toggle="tab">My Product Reviews</a></li>
                             <li><a href="#my-tags" data-toggle="tab">My Tags</a></li>
                             <li><a href="#my-wishlist" data-toggle="tab">My Wishlist</a></li>
-                            <li><a href="#newsletter-subscriptions" data-toggle="tab">Newsletter Subscriptions</a></li>
+                            <li><a href="logout">Logout</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-8 col-md-9">
@@ -263,22 +263,6 @@
                                     </tbody>
                                 </table>
                                 <button class="btn btn-medium style1">Update Wishlist</button>
-                            </form>
-                        </div>
-                        <div id="newsletter-subscriptions" class="tab-content">
-                            <form>
-                                <h4>Newsletter Subscriptions</h4>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="1" checked>General Subscription
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-medium style1">Save Information</button>
-                                </div>
-
                             </form>
                         </div>
 

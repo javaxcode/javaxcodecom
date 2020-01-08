@@ -14,11 +14,18 @@ class Registrasi extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'javaXcode';
+        if($this->input->post()){
+            $this->_register();
+        }else{
+            $data['title'] = 'javaXcode';
+            $this->load->view('com/templates/header', $data);
+            $this->load->view('com/templates/topbarblack');
+            $this->load->view('com/registrasi');
+            $this->load->view('com/templates/footer');
+        }
+    }
 
-        $this->load->view('com/templates/header', $data);
-        $this->load->view('com/templates/topbarblack');
-        $this->load->view('com/registrasi');
-        $this->load->view('com/templates/footer');
+    private function _register(){
+
     }
 }

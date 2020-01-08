@@ -22,6 +22,18 @@ class Checkout extends CI_Controller
     $this->load->view('com/templates/footer');   
   }
 
+  public function cart()
+  {
+    $header = array(
+      'title' => 'Cart'
+    );
+
+    $this->load->view('com/templates/header', $header);
+    $this->load->view('com/templates/topbarblack');
+    $this->load->view('com/cart');
+    $this->load->view('com/templates/footer');   
+  }
+
   public function go($param=''){
     if($param!=null){
       $check = $this->db->get_where('product', array('id' => $param))->row_array();
@@ -34,7 +46,7 @@ class Checkout extends CI_Controller
         );
         $this->cart->insert($data);
         
-        redirect('/checkout');
+        redirect('/cart');
       }else{
         redirect('/price');
       }
@@ -72,7 +84,7 @@ class Checkout extends CI_Controller
       header('Content-Type: Application/json');
     echo json_encode(array('status' => 200));
     }else{
-      redirect('/checkout');
+      redirect('/cart');
     }
   }
 
@@ -82,7 +94,7 @@ class Checkout extends CI_Controller
       header('Content-Type: Application/json');
       echo json_encode(array('status' => 200));
     }else{
-      redirect('/checkout');
+      redirect('/cart');
     }
   }
 

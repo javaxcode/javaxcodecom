@@ -18,10 +18,14 @@ class Login extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == false) {
-            $this->load->view('com/templates/header', $data);
-            $this->load->view('com/templates/topbarblack');
-            $this->load->view('com/login');
-            $this->load->view('com/templates/footer');
+            if($this->session->userdata('user_email') == null){
+                $this->load->view('com/templates/header', $data);
+                $this->load->view('com/templates/topbarblack');
+                $this->load->view('com/login');
+                $this->load->view('com/templates/footer');
+            }else{
+                redirect('member');
+            }
         } else {
             $this->_login();
         }
@@ -103,6 +107,6 @@ class Login extends CI_Controller
         $this->session->unset_userdata('user_email');
         $this->session->unset_userdata('user_role');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Log Out</div>');
-        redirect('auth');
+        redirect('login');
     }
 }
