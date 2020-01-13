@@ -22,16 +22,34 @@ class Checkout extends CI_Controller
     $this->load->view('com/templates/footer');   
   }
 
-  public function cart()
-  {
-    $header = array(
-      'title' => 'Cart'
+  public function proses_checkout(){
+    $member_sess = $this->session->userdata('user_email');
+    $data_checkout = array(
+      'member_email' => $member_sess,
+      'tanggal' => time(),
+      'total' => $this->cart->total(),
+      'payment_method' => $this->input->post('payment_method'),
+      'status' => '0'
     );
+    $this->db->insert('checkout', $data_checkout);
 
-    $this->load->view('com/templates/header', $header);
-    $this->load->view('com/templates/topbarblack');
-    $this->load->view('com/cart');
-    $this->load->view('com/templates/footer');   
+    $this->db->order_by('id', 'DESC');
+    $this->db->limit(1);
+    $id_checkout = $this->db->get('checkout')->row_array();
+
+    $detail_checkout = [];
+    foreach($this->cart->contents() as $row){
+      $detail_checkout[] = array(
+        'id_checkout' => $id_checkout['id'],
+        'id_product' => $row['id'],
+        'qty' => $row['qty'],
+        'harga' => $row['price'],
+        'subtotal' => $row['subtotal']
+      );
+    }
+
+    $this->db->insert_batch('checkout_detail', $detail_checkout);
+    redirect(base_url('member'));
   }
 
   public function go($param=''){
@@ -46,7 +64,7 @@ class Checkout extends CI_Controller
         );
         $this->cart->insert($data);
         
-        redirect('/cart');
+        redirect('/checkout');
       }else{
         redirect('/price');
       }

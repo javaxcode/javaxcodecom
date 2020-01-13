@@ -13,7 +13,6 @@
         <section id="content">
             <div class="container">
                 <div class="woocommerce">
-                    <form class="checkout block">
                         <div class="row">
                             <?php if($this->session->userdata('user_email') == null): ?>
                             <div class="col-sm-6">
@@ -79,48 +78,29 @@
                                             </tr>
                                         </tfoot>
                                     </table>
+                                    <form action="<?=base_url('com/checkout/proses_checkout');?>" method="POST">
                                     <div id="payment">
                                         <h4>Payment Method</h4>
                                         <ul class="payment_methods methods box-sm">
                                             <li class="payment_method_bacs">
                                                 <label class="radio">
-                                                    <input id="payment_method_bacs" class="input-radio" name="payment_method" value="bacs" checked="checked" data-order_button_text="" type="radio">
+                                                    <input id="payment_method_bacs" class="input-radio" name="payment_method" value="bank transfer" checked="checked" data-order_button_text="" type="radio">
                                                     Direct Bank Transfer
                                                 </label>
                                                 <div class="payment_box payment_method_bacs"><p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
                                                 </div>
                                             </li>
-<!--                                             
-                                            <li class="payment_method_cheque">
-                                                <label class="radio">
-                                                    <input id="payment_method_cheque" class="input-radio" name="payment_method" value="cheque" data-order_button_text="" type="radio">
-                                                    Cheque Payment
-                                                </label>
-                                                <div class="payment_box payment_method_cheque"><p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                                </div>
-                                            </li>
-                                            <li class="payment_method_paypal">
-                                                <label class="radio">
-                                                    <input id="payment_method_paypal" class="input-radio" name="payment_method" value="paypal" data-order_button_text="Proceed to PayPal" type="radio">
-                                                    PayPal <img src="http://demo.qodeinteractive.com/bridge/wp-content/plugins/woocommerce/assets/images/icons/paypal.png" alt="PayPal">
-                                                </label>
-                                                <div class="payment_box payment_method_paypal"><p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account</p>
-                                                </div>
-                                            </li> -->
                                         </ul>
                                         <div class="form-row place-order">
-                                            <noscript>Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.<br/>
-                                            <button type="submit" class="btn btn-medium style1">Update Totals</button>
-                                            </noscript>
-                                            <button id="place_order" class="btn btn-medium style1 pull-right">Place Your Order</button>
+                                            <button id="place_order" class="btn btn-medium style1 pull-right" type="submit">Place Your Order</button>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                             
                         </div>
-                    </form>
                 </div>
             </div>
         </section>
